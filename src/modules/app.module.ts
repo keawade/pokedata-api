@@ -1,9 +1,7 @@
 import { Module } from 'nest.js';
-import { PokemonController } from './controllers/pokemon.controller';
-import { PokemonService } from './services/pokemon.service';
+import { PokemonModule } from './pokemon/pokemon.module';
 
 @Module({
-    controllers: [ PokemonController ],
-    components: [ PokemonService ],
+    modules: [ PokemonModule ],
 })
 export class ApplicationModule {}
