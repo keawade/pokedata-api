@@ -1,7 +1,7 @@
 interface IPokemon {
   id: number;
   name: string;
-  types: Array<IPokemonType>;
+  types: IPokemonType[];
   height: number;
   weight: number;
   sprites: IPokemonSprites;
@@ -27,12 +27,12 @@ interface IType {
   id: number;
   name: string;
   damage_relations: {
-    no_damage_to: Array<INamedAPIResource>;
-    half_damage_to: Array<INamedAPIResource>;
-    double_damage_to: Array<INamedAPIResource>;
-    no_damage_from: Array<INamedAPIResource>;
-    half_damage_from: Array<INamedAPIResource>;
-    double_damage_from: Array<INamedAPIResource>;
+    no_damage_to: INamedAPIResource[];
+    half_damage_to: INamedAPIResource[];
+    double_damage_to: INamedAPIResource[];
+    no_damage_from: INamedAPIResource[];
+    half_damage_from: INamedAPIResource[];
+    double_damage_from: INamedAPIResource[];
   }
   generation: INamedAPIResource
   move_damage_class: INamedAPIResource;
@@ -42,7 +42,7 @@ interface IResultList {
   count: number;
   next: string;
   previous: string;
-  results: Array<INamedAPIResource>;
+  results: INamedAPIResource[];
 }
 
 interface INamedAPIResource {

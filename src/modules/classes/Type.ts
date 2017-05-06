@@ -1,11 +1,11 @@
 export default class Type {
   name: string;
-  noDamageFrom: Array<string>;
-  halfDamageFrom: Array<string>;
-  doubleDamageFrom: Array<string>;
-  noDamageTo: Array<string>;
-  halfDamageTo: Array<string>;
-  doubleDamageTo: Array<string>;
+  noDamageFrom: string[];
+  halfDamageFrom: string[];
+  doubleDamageFrom: string[];
+  noDamageTo: string[];
+  halfDamageTo: string[];
+  doubleDamageTo: string[];
   generation: string;
   moveDamageClass: string;
 

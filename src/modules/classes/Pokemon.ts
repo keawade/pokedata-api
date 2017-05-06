@@ -3,8 +3,8 @@ import Type from './Type';
 export default class Pokemon {
   id: number;
   name: string;
-  types: Array<string>;
-  typeData: Array<Type>;
+  types: string[];
+  typeData: Type[];
   height: number;
   weight: number;
   sprites: IPokemonSprites;
@@ -21,7 +21,7 @@ export default class Pokemon {
     }
   }
 
-  public setTypeData = (types: Array<IType>) => {
+  public setTypeData = (types: IType[]) => {
     this.typeData = types.map((type) => (new Type(type)));
   }
 }
