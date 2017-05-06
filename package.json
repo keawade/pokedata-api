@@ -1,5 +1,24 @@
 {
+  "name": "pokedata-api",
+  "version": "0.0.1",
+  "description": "PokeData API built with Nest",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon -e ts --watch src index.js",
+    "build": "node index.js"
+  },
   "dependencies": {
-    "nest.js": "^1.0.3"
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "nest.js": "*",
+    "typescript": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.35",
+    "@types/morgan": "^1.7.32",
+    "@types/node": "^7.0.5",
+    "nodemon": "^1.11.0",
+    "ts-node": "^2.1.0"
   }
 }
