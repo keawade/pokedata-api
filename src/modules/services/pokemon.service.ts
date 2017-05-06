@@ -7,6 +7,17 @@ import { Component, HttpException } from 'nest.js';
 export class PokemonService {
   private pokedex = new Pokedex();
 
+  public async getPokemonList() {
+    try {
+      const namedResourceList: IResultList = await this.pokedex.getPokemonsList()
+      const nameList: Array<string> = namedResourceList.results.map((result) => (result.name));
+      return Promise.resolve(nameList);
+    } catch (err) {
+      console.error(err);
+      throw new HttpException('Internal error', 500);
+    }
+  }
+
   public async getPokemon(name: string) {
     const pokemon = new Pokemon(await this.pokedex.getPokemonByName(name));
     const types = await Promise.all(pokemon.types.map((type) => (this.pokedex.getTypeByName(type))));
