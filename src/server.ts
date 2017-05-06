@@ -12,5 +12,7 @@ expressInstance.use(morgan('dev'));
 // Initialize application core
 const app = NestFactory.create(ApplicationModule, expressInstance);
 
+const port = process.env.PORT || 3000;
+
 // Listen on port
-app.listen(8080, () => console.log(`Application is listening on port ${8080}.`));
+app.listen(port, () => console.log(`Application is listening on port ${port}.`));
