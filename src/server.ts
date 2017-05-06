@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as morgan from 'morgan';
+import * as cors from 'cors';
 
 import { NestFactory } from 'nest.js';
 import { ApplicationModule } from './modules/app.module';
@@ -8,6 +9,7 @@ import { ApplicationModule } from './modules/app.module';
 const expressInstance = express();
 // Initialize morgan for logging
 expressInstance.use(morgan('dev'));
+expressInstance.use(cors());
 
 // Initialize application core
 const app = NestFactory.create(ApplicationModule, expressInstance);
